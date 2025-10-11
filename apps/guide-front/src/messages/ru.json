@@ -1,0 +1,430 @@
+{
+  "Categories": {
+    "beginner": "Начинающий",
+    "intermediate": "Средний",
+    "advanced": "Продвинутый",
+    "expert": "Эксперт",
+    "pcBuilding": "Сборка ПК",
+    "pcBuildingDescription": "Полные руководства по сборке игровых ПК, рабочих станций и бюджетных сборок с подробным подбором компонентов и инструкциями по сборке.",
+    "troubleshooting": "Решение проблем",
+    "troubleshootingDescription": "Пошаговые руководства по диагностике и устранению распространенных проблем с компьютером и оборудованием.",
+    "networking": "Сетевое оборудование",
+    "networkingDescription": "Настройка и оптимизация домашних сетей, маршрутизаторов и беспроводных систем для максимальной производительности.",
+    "softwareInstallation": "Установка ПО",
+    "softwareInstallationDescription": "Научитесь правильно устанавливать и настраивать операционные системы и важные программные приложения.",
+    "hardwareUpgrades": "Апгрейд оборудования",
+    "hardwareUpgradesDescription": "Руководства по обновлению оперативной памяти, хранилища, видеокарт и других компонентов компьютера.",
+    "customModding": "Кастомные моды",
+    "customModdingDescription": "Продвинутые техники модификации корпусов, пользовательских систем охлаждения и эстетических изменений."
+  },
+   "CategoryCard": {
+    "guidesCount": "{count, plural, one {# Руководство} few {# Руководства} many {# Руководств} other {# Руководств}}",
+    "beginner": "Начинающий",
+    "intermediate": "Средний",
+    "advanced": "Продвинутый",
+    "expert": "Эксперт",
+    "easy": "Легкий",
+    "medium": "Средний",
+    "hard": "Сложный"
+  },
+  "HomePage": {
+    "assemblyCategories": "Категории Сборки",
+    "categoriesDescription": "Исследуйте различные категории сборки, чтобы найти идеальный вариант для ваших нужд.",
+    "featuredGuides": "Рекомендуемые Руководства по Сборке",
+    "featuredDescription": "Наши самые популярные руководства по сборке, идеально подходящие для начинающих и опытных сборщиков.",
+    "showingGuides": "Показано {count} руководств{count, plural, one {о} few {а} many {} other {}}",
+    "noGuidesFound": "Не найдено руководств по вашим фильтрам",
+    "loading": "Загрузка руководств...",
+    "error": "Ошибка загрузки руководств",
+    "allCategories": "Все категории",
+    "allLevels": "Все уровни",
+    "anyDuration": "Любая длительность",
+    "anyRating": "Любой рейтинг",
+    "under30min": "До 30 мин",
+    "30to60min": "30-60 мин",
+    "1to2hours": "1-2 часа",
+    "2to4hours": "2-4 часа",
+    "4plusHours": "4+ часа",
+    "45plusStars": "4.5+ звезд",
+    "40plusStars": "4.0+ звезд",
+    "35plusStars": "3.5+ звезд",
+    "30plusStars": "3.0+ звезд"
+  },
+  "GuideSteps": {
+    "loading": "Загрузка руководства...",
+    "error": "Ошибка загрузки руководства",
+    "notFound": "Руководство не найдено",
+    "backToGuides": "Назад к руководствам",
+    "updated": "Обновлено",
+    "reviews": "({count} отзывов)",
+    "assemblySteps": "Шаги сборки",
+    "step": "Шаг",
+    "min": "мин",
+    "proTips": "Cоветы",
+    "proTip": "Профессиональный совет",
+    "warningTip": "Предупреждение",
+    "infoTip": "Информация",
+    "additionalDetails": "Дополнительные технические детали и информация по устранению неполадок будут отображаться здесь. Этот раздел может включать подробные объяснения, альтернативные подходы или распространенные проблемы, которые могут возникнуть на этом этапе.",
+    "hideDetails": "Скрыть детали",
+    "showDetails": "Показать детали",
+    "duration": "Длительность",
+    "steps": "Шаги",
+    "stepsCompleted": "{completed} из {total} завершено",
+    "progress": "Прогресс",
+    "timeRemaining": "Осталось времени",
+    "addBookmark": "Добавить в закладки",
+    "removeBookmark": "Удалить из закладок",
+    "easy": "Легкий",
+    "medium": "Средний",
+    "hard": "Сложный",
+    "beginner": "Начинающий",
+    "intermediate": "Средний",
+    "advanced": "Продвинутый",
+    "expert": "Эксперт",
+    "pcBuilding": "Сборка ПК",
+    "monitorSetup": "Настройка монитора",
+    "keyboardAssembly": "Сборка клавиатуры",
+    "audioSetup": "Настройка аудио",
+    "networking": "Сетевое оборудование",
+    "gamingSetup": "Игровая настройка",
+    "workstation": "Рабочая станция"
+  },
+  "GuideCard": {
+    "stepsCount": "{count, plural, one {# Шаг} few {# Шага} many {# Шагов} other {# Шагов}}",
+    "reviews": "({count})",
+    "updated": "Обновлено {date}",
+    "startGuide": "Начать Руководство",
+    "startGuideAriaLabel": "Начать руководство {title}",
+    "beginner": "Начинающий",
+    "intermediate": "Средний",
+    "advanced": "Продвинутый",
+    "expert": "Эксперт",
+    "pcBuilding": "Сборка ПК",
+    "monitorSetup": "Настройка монитора",
+    "keyboardAssembly": "Сборка клавиатуры",
+    "audioSetup": "Настройка аудио",
+    "networking": "Сетевое оборудование",
+    "gamingSetup": "Игровая настройка",
+    "workstation": "Рабочая станция"
+  },
+  "FilterSection": {
+    "filters": "Фильтры",
+    "clearAll": "Очистить все",
+    "category": "Категория",
+    "difficulty": "Сложность",
+    "duration": "Длительность",
+    "rating": "Рейтинг",
+    "allCategories": "Все категории",
+    "allLevels": "Все уровни",
+    "anyDuration": "Любая длительность",
+    "anyRating": "Любой рейтинг",
+    "pcBuilding": "Сборка ПК",
+    "monitorSetup": "Настройка монитора",
+    "keyboardAssembly": "Сборка клавиатуры",
+    "audioSetup": "Настройка аудио",
+    "networking": "Сетевое оборудование",
+    "gamingSetup": "Игровая настройка",
+    "workstation": "Рабочая станция",
+    "beginner": "Начинающий",
+    "intermediate": "Средний",
+    "advanced": "Продвинутый",
+    "expert": "Эксперт",
+    "under30min": "До 30 мин",
+    "30to60min": "30-60 мин",
+    "1to2hours": "1-2 часа",
+    "2to4hours": "2-4 часа",
+    "4plusHours": "4+ часа",
+    "45plusStars": "4.5+ звезд",
+    "40plusStars": "4.0+ звезд",
+    "35plusStars": "3.5+ звезд",
+    "30plusStars": "3.0+ звезд"
+  },
+  "HeroSection": {
+    "subtitle": "Освойте искусство",
+    "title": "Технической Сборки",
+    "description": "Научитесь собирать компьютеры, настраивать мониторы, собирать механические клавиатуры и многое другое с помощью наших подробных пошаговых руководств и экспертных методик.",
+    "getStarted": "Начать",
+    "watchDemo": "Смотреть Демо",
+    "expertGuides": "Экспертных Руководств",
+    "detailedSteps": "Подробных Шагов",
+    "happyBuilders": "Довольных Сборщиков"
+  },
+  "Footer": {
+    "brandName": "Smart Device Instructor",
+    "brandDescription": "Ваш главный ресурс для освоения технической сборки с экспертными руководствами, пошаговыми инструкциями и профессиональными методиками.",
+    "stayUpdated": "Будьте в курсе",
+    "emailPlaceholder": "Введите ваш email",
+    "subscribe": "Подписаться",
+    "newsletterText": "Получайте последние руководства и обновления на вашу почту.",
+    "subscriptionSuccess": "Спасибо за подписку!",
+    "guides": "Руководства",
+    "pcBuilding": "Сборка ПК",
+    "monitorSetup": "Настройка монитора",
+    "keyboardAssembly": "Сборка клавиатуры",
+    "audioSetup": "Настройка аудио",
+    "networking": "Сетевое оборудование",
+    "resources": "Ресурсы",
+    "componentDatabase": "База компонентов",
+    "toolRecommendations": "Рекомендации инструментов",
+    "videoTutorials": "Видеоуроки",
+    "communityForum": "Форум сообщества",
+    "troubleshooting": "Решение проблем",
+    "company": "Компания",
+    "aboutUs": "О нас",
+    "contact": "Контакты",
+    "privacyPolicy": "Политика конфиденциальности",
+    "termsOfService": "Условия использования",
+    "careers": "Карьера",
+    "copyright": "© 2025 Smart Device Instructor. Все права защищены."
+  },
+  "AdminUniversities": {
+    "title": "Админ",
+    "accessDenied": "Доступ запрещен",
+    "noPermission": "У вас нет прав для доступа к этой странице.",
+    
+    "form": {
+      "basicInfo": "Основная информация",
+      "programDetails": "Детали программы",
+      "requirements": "Требования",
+      "additionalInfo": "Дополнительная информация",
+      "websiteLinks": "Ссылки на сайты",
+      
+      "fields": {
+        "name": "Название",
+        "description": "Описание",
+        "photoUrl": "URL фотографии",
+        "specials": "Специализации",
+        "financing": "Варианты финансирования",
+        "duration": "Продолжительность",
+        "applicationDeadline": "Срок подачи заявок",
+        "gender": "Пол",
+        "age": "Минимальный возраст",
+        "others": "Другие требования",
+        "others_p": "Другие требования программы",
+        "medicine": "Медицинское страхование",
+        "salary": "Предоставляется зарплата",
+        "domitory": "Информация об общежитии",
+        "rewards": "Награды/Стипендии",
+        "officialLink": "Официальная ссылка на программу"
+      },
+      
+      "placeholders": {
+        "optional": "опционально",
+        "required": "обязательно",
+        "selectGender": "Выберите пол",
+        "salaryOption": "Предоставляется зарплата?",
+        "durationExample": "напр., 4 года"
+      },
+      
+      "options": {
+        "gender": {
+          "everyone": "Все",
+          "male": "Мужской",
+          "female": "Женский"
+        },
+        "salary": {
+          "yes": "Да",
+          "no": "Нет"
+        }
+      }
+    },
+    
+    "buttons": {
+      "addUniversity": "Добавить университет",
+      "updateUniversity": "Обновить университет",
+      "cancel": "Отмена",
+      "edit": "Редактировать",
+      "delete": "Удалить",
+      "visit": "Посетить",
+      "saving": "Сохранение..."
+    },
+    
+    "table": {
+      "title": "Университеты ({count})",
+      "headers": {
+        "id": "ID",
+        "name": "Название",
+        "description": "Описание",
+        "specials": "Специализации",
+        "duration": "Продолжительность",
+        "deadline": "Срок",
+        "website": "Сайт",
+        "actions": "Действия"
+      },
+      "noData": "не найденo",
+      "savingChanges": "Сохранение изменений..."
+    },
+    
+    "messages": {
+      "loading": "Загрузка...",
+      "confirmDelete": "Вы уверены, что хотите удалить это?",
+      "error": "Ошибка: {error}",
+      "errorCreating": "Ошибка при создании: {error}",
+      "errorUpdating": "Ошибка при обновлении: {error}",
+      "errorDeleting": "Ошибка при удалении: {error}"
+    }
+  },
+
+  "FavoritesPage": {
+    "loading": "Загрузка ваших избранных университетов...",
+    "error": "Ошибка загрузки данных университетов",
+    "title": "Мои избранные университеты",
+    "subtitle": "Университеты, которые вы лайкнули и сохранили",
+    "searchPlaceholder": "Поиск по избранным...",
+    "totalFavorites": "Всего избранных",
+    "matchingSearch": "Соответствует поиску",
+    "emptyState": {
+      "title": "Пока нетy избранных",
+      "description": "Начните изучать и добавляйте их в избранное, нажимая на значок сердца.",
+      "exploreButton": "Исследовать"
+    },
+    "noResults": {
+      "title": "Результаты не найдены",
+      "description": "Нет избранных, соответствующих вашему запросу \"{search}\"",
+      "clearSearch": "Очистить поиск"
+    }
+  },
+
+  "AuthPage": {
+    "welcomeBack": "С возвращением!",
+    "login": {
+      "title": "Вход",
+      "subtitle": "С возвращением! Пожалуйста, войдите в свой аккаунт.",
+      "signIn": "Войти",
+      "signingIn": "Вход..."
+    },
+    "signup": {
+      "title": "Регистрация",
+      "subtitle": "Создайте новый аккаунт, чтобы начать.",
+      "createAccount": "Создать аккаунт",
+      "creatingAccount": "Создание аккаунта..."
+    },
+    "form": {
+      "email": "Email",
+      "emailPlaceholder": "Введите ваш email",
+      "password": "Пароль",
+      "passwordPlaceholder": "Введите ваш пароль",
+      "createPassword": "Создайте пароль",
+      "confirmPassword": "Подтвердите пароль",
+      "confirmPasswordPlaceholder": "Подтвердите ваш пароль",
+      "fullName": "Полное имя",
+      "fullNamePlaceholder": "Введите ваше полное имя"
+    },
+    "switchMode": {
+      "noAccount": "Нет аккаунта? ",
+      "haveAccount": "Уже есть аккаунт? ",
+      "signUp": "Зарегистрироваться",
+      "signIn": "Войти"
+    },
+    "errors": {
+      "loginFailed": "Ошибка входа",
+      "registrationFailed": "Ошибка регистрации",
+      "passwordMismatch": "Пароли не совпадают",
+      "passwordLength": "Пароль должен содержать не менее 6 символов",
+      "generic": "Что-то пошло не так"
+    }
+  },
+
+  "ProfilePage": {
+     "guides": "{{count}} руководство",
+    "guides_plural": "{{count}} руководств",
+    "editProfile": "Редактировать профиль",
+    "saving": "Сохранение...",
+    "noName": "Имя не указано",
+    "noEmail": "Email не указан",
+    "error": "Ошибка загрузки профиля",
+    "bookmarkedGuides": "Сохраненные руководства",
+    "noBookmarkedGuides": "Пока нет сохраненных руководств",
+    "bookmarkGuideHint": "Сохраняйте полезные руководства, чтобы быстро находить их здесь",
+    "exploreGuides": "Найти руководства",
+    "viewGuide": "Посмотреть руководство",
+    "likedUniversities": "Избранные",
+    "noLikedUniversities": "Пока нет избранных",
+    "exploreUniversities": "Найти университеты",
+    "editModal": {
+      "title": "Редактировать профиль",
+      "form": {
+        "name": "Полное имя",
+        "namePlaceholder": "Введите ваше полное имя",
+        "email": "Адрес электронной почты",
+        "emailPlaceholder": "Введите ваш email"
+      },
+      "buttons": {
+        "cancel": "Отмена",
+        "save": "Сохранить изменения"
+      },
+      "errors": {
+        "nameRequired": "Имя обязательно",
+        "emailRequired": "Email обязателен",
+        "emailInvalid": "Пожалуйста, введите корректный email адрес"
+      }
+    }
+  },
+
+  "UniversitiesPage": {
+    "title": "Университеты",
+    "subtitle": "Исследуйте и открывайте университеты по всему миру",
+    "loading": "Загрузка университетов...",
+    "error": "Ошибка загрузки университетов",
+    "search": {
+      "placeholder": "Поиск университетов...",
+      "button": "Поиск",
+      "resultsCount": "Найдено результатов"
+    },
+    "noResults": {
+      "title": "Университеты не найдены",
+      "description": "Попробуйте изменить параметры поиска или фильтры."
+    },
+    "emptyState": {
+      "title": "Нет доступных университетов",
+      "description": "В настоящее время нет университетов для отображения."
+    }
+  },
+
+  "UniversityCard": {
+    "visitWebsite": "Посетить сайт",
+    "addFavorite": "Добавить в избранное",
+    "removeFavorite": "Удалить из избранного",
+    "loginRequired": "Войдите, чтобы добавить в избранное",
+    "authPrompt": "Для добавления в избранное необходимо войти в систему. Хотите зарегистрироваться или войти сейчас?",
+    "modal": {
+      "authPrompt": "Для добавления в избранное необходимо войти в систему. Хотите зарегистрироваться или войти сейчас?",
+      "buttons": {
+        "addFavorite": "Добавить в избранное",
+        "removeFavorite": "Удалить из избранного",
+        "loginRequired": "Войдите, чтобы добавить в избранное",
+        "visitWebsite": "Посетить официальный сайт"
+      },
+      "sections": {
+        "specializations": "Специализации",
+        "financing": "Варианты финансирования",
+        "duration": "Продолжительность программы",
+        "deadline": "Срок подачи заявок",
+        "gender": "Требования по полу",
+        "age": "Возрастные требования",
+        "medical": "Медицинские требования",
+        "salary": "Информация о зарплате",
+        "dormitory": "Информация об общежитии",
+        "scholarships": "Стипендии и награды",
+        "otherInfo": "Другая информация",
+        "additionalDetails": "Дополнительные детали"
+      }
+    }
+  },
+
+
+  "Header": {
+    "logo": "Smart Device Instructor",
+    "nav": {
+      "home": "Главная",
+      "search": "Поиск",
+      "likes": "Избранное",
+      "profile": "Профиль",
+      "login": "Войти",
+      "logout": "Выйти"
+    },
+    "aria": {
+      "menu": "Переключить меню"
+    }
+  }
+}

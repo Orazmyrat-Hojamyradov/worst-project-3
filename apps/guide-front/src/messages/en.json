@@ -1,0 +1,429 @@
+{
+   "Categories": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "expert": "Expert",
+    "pcBuilding": "PC Building",
+    "pcBuildingDescription": "Complete guides for building gaming PCs, workstations, and budget builds with detailed component selection and assembly instructions.",
+    "troubleshooting": "Troubleshooting",
+    "troubleshootingDescription": "Step-by-step guides for diagnosing and fixing common computer issues and hardware problems.",
+    "networking": "Networking",
+    "networkingDescription": "Setup and optimize home networks, routers, and wireless systems for maximum performance.",
+    "softwareInstallation": "Software Installation",
+    "softwareInstallationDescription": "Learn how to properly install and configure operating systems and essential software applications.",
+    "hardwareUpgrades": "Hardware Upgrades",
+    "hardwareUpgradesDescription": "Guides for upgrading RAM, storage, graphics cards, and other computer components.",
+    "customModding": "Custom Modding",
+    "customModdingDescription": "Advanced techniques for case modding, custom cooling loops, and aesthetic modifications."
+  },
+  "CategoryCard": {
+    "guidesCount": "{count, plural, one {# Guide} other {# Guides}}",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "expert": "Expert",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  },
+  "HomePage": {
+    "assemblyCategories": "Assembly Categories",
+    "categoriesDescription": "Explore a variety of assembly categories to find the perfect fit for your needs.",
+    "featuredGuides": "Featured Assembly Guides",
+    "featuredDescription": "Our most popular assembly guides, perfect for beginners and experienced builders.",
+    "showingGuides": "Showing {count} guide{count, plural, one {} other {s}}",
+    "noGuidesFound": "No guides found matching your filters",
+    "loading": "Loading guides...",
+    "error": "Error loading guides",
+    "allCategories": "All Categories",
+    "allLevels": "All Levels",
+    "anyDuration": "Any Duration",
+    "anyRating": "Any Rating",
+    "under30min": "Under 30 min",
+    "30to60min": "30-60 min",
+    "1to2hours": "1-2 hours",
+    "2to4hours": "2-4 hours",
+    "4plusHours": "4+ hours",
+    "45plusStars": "4.5+ Stars",
+    "40plusStars": "4.0+ Stars",
+    "35plusStars": "3.5+ Stars",
+    "30plusStars": "3.0+ Stars"
+  },
+  "GuideSteps": {
+    "loading": "Loading guide...",
+    "error": "Error loading guide",
+    "notFound": "Guide not found",
+    "backToGuides": "Back to Guides",
+    "updated": "Updated",
+    "reviews": "({count} reviews)",
+    "assemblySteps": "Assembly Steps",
+    "step": "Step",
+    "min": "min",
+    "proTips": "Tips",
+    "proTip": "Pro Tip",
+    "warningTip": "Warning",
+    "infoTip": "Info",
+    "additionalDetails": "Additional technical details and troubleshooting information would appear here. This section can include detailed explanations, alternative approaches, or common issues that might arise during this step.",
+    "hideDetails": "Hide Details",
+    "showDetails": "Show Details",
+    "duration": "Duration",
+    "steps": "Steps",
+    "stepsCompleted": "{completed} of {total} completed",
+    "progress": "Progress",
+    "timeRemaining": "Time remaining",
+    "addBookmark": "Add bookmark",
+    "removeBookmark": "Remove bookmark",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "expert": "Expert",
+    "pcBuilding": "PC Building",
+    "monitorSetup": "Monitor Setup",
+    "keyboardAssembly": "Keyboard Assembly",
+    "audioSetup": "Audio Setup",
+    "networking": "Networking",
+    "gamingSetup": "Gaming Setup",
+    "workstation": "Workstation"
+  },
+  "GuideCard": {
+    "stepsCount": "{count, plural, one {# Step} other {# Steps}}",
+    "reviews": "({count})",
+    "updated": "Updated {date}",
+    "startGuide": "Start Guide",
+    "startGuideAriaLabel": "Start {title} guide",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "expert": "Expert",
+    "pcBuilding": "PC Building",
+    "monitorSetup": "Monitor Setup",
+    "keyboardAssembly": "Keyboard Assembly",
+    "audioSetup": "Audio Setup",
+    "networking": "Networking",
+    "gamingSetup": "Gaming Setup",
+    "workstation": "Workstation"
+  },
+  "FilterSection": {
+    "filters": "Filters",
+    "clearAll": "Clear All",
+    "category": "Category",
+    "difficulty": "Difficulty",
+    "duration": "Duration",
+    "rating": "Rating",
+    "allCategories": "All Categories",
+    "allLevels": "All Levels",
+    "anyDuration": "Any Duration",
+    "anyRating": "Any Rating",
+    "pcBuilding": "PC Building",
+    "monitorSetup": "Monitor Setup",
+    "keyboardAssembly": "Keyboard Assembly",
+    "audioSetup": "Audio Setup",
+    "networking": "Networking",
+    "gamingSetup": "Gaming Setup",
+    "workstation": "Workstation",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "expert": "Expert",
+    "under30min": "Under 30 min",
+    "30to60min": "30-60 min",
+    "1to2hours": "1-2 hours",
+    "2to4hours": "2-4 hours",
+    "4plusHours": "4+ hours",
+    "45plusStars": "4.5+ Stars",
+    "40plusStars": "4.0+ Stars",
+    "35plusStars": "3.5+ Stars",
+    "30plusStars": "3.0+ Stars"
+  },
+  "HeroSection": {
+    "subtitle": "Master the Art of",
+    "title": "Tech Assembly",
+    "description": "Learn to build computers, set up monitors, assemble mechanical keyboards, and more with our detailed step-by-step guides and expert techniques.",
+    "getStarted": "Get Started",
+    "watchDemo": "Watch Demo",
+    "expertGuides": "Expert Guides",
+    "detailedSteps": "Detailed Steps",
+    "happyBuilders": "Happy Builders"
+  },
+  "Footer": {
+    "brandName": "Smart Device Instructor",
+    "brandDescription": "Your ultimate resource for mastering tech assembly with expert guides, step-by-step instructions, and professional techniques.",
+    "stayUpdated": "Stay Updated",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "newsletterText": "Get the latest guides and updates delivered to your inbox.",
+    "subscriptionSuccess": "Thank you for subscribing!",
+    "guides": "Guides",
+    "pcBuilding": "PC Building",
+    "monitorSetup": "Monitor Setup",
+    "keyboardAssembly": "Keyboard Assembly",
+    "audioSetup": "Audio Setup",
+    "networking": "Networking",
+    "resources": "Resources",
+    "componentDatabase": "Component Database",
+    "toolRecommendations": "Tool Recommendations",
+    "videoTutorials": "Video Tutorials",
+    "communityForum": "Community Forum",
+    "troubleshooting": "Troubleshooting",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "careers": "Careers",
+    "copyright": "© 2025 Smart Device Instructor. All rights reserved."
+  },
+  "AdminUniversities": {
+    "title": "Admin",
+    "accessDenied": "Access Denied",
+    "noPermission": "You do not have permission to access this page.",
+    
+    "form": {
+      "basicInfo": "Basic Information",
+      "programDetails": "Program Details",
+      "requirements": "Requirements",
+      "additionalInfo": "Additional Information",
+      "websiteLinks": "Website Links",
+      
+      "fields": {
+        "name": "University Name",
+        "description": "Description",
+        "photoUrl": "Photo URL",
+        "specials": "Specializations",
+        "financing": "Financing Options",
+        "duration": "Duration",
+        "applicationDeadline": "Application Deadline",
+        "gender": "Gender",
+        "age": "Minimum Age",
+        "others": "Other Requirements",
+        "others_p": "Other Program Requirements",
+        "medicine": "Medical Coverage",
+        "salary": "Salary Provided",
+        "domitory": "Dormitory Information",
+        "rewards": "Rewards/Scholarships",
+        "officialLink": "Official Program Link"
+      },
+      
+      "placeholders": {
+        "optional": "optional",
+        "required": "required",
+        "selectGender": "Select Gender",
+        "salaryOption": "Salary Provided?",
+        "durationExample": "e.g., 4 years"
+      },
+      
+      "options": {
+        "gender": {
+          "everyone": "Everyone",
+          "male": "Male",
+          "female": "Female"
+        },
+        "salary": {
+          "yes": "Yes",
+          "no": "No"
+        }
+      }
+    },
+    
+    "buttons": {
+      "addUniversity": "Add University",
+      "updateUniversity": "Update University",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "visit": "Visit",
+      "saving": "Saving..."
+    },
+    
+    "table": {
+      "title": "Universities ({count})",
+      "headers": {
+        "id": "ID",
+        "name": "Name",
+        "description": "Description",
+        "specials": "Specializations",
+        "duration": "Duration",
+        "deadline": "Deadline",
+        "website": "Website",
+        "actions": "Actions"
+      },
+      "noData": "Not found",
+      "savingChanges": "Saving changes..."
+    },
+    
+    "messages": {
+      "loading": "Loading...",
+      "confirmDelete": "Are you sure you want to delete this university?",
+      "error": "Error: {error}",
+      "errorCreating": "Error creating university: {error}",
+      "errorUpdating": "Error updating university: {error}",
+      "errorDeleting": "Error deleting university: {error}"
+    }
+  },
+
+  "FavoritesPage": {
+    "loading": "Loading your favorites...",
+    "error": "Error loading data",
+    "title": "My Favorites",
+    "subtitle": "You've liked and saved",
+    "searchPlaceholder": "Search your favorites...",
+    "totalFavorites": "Total Favorites",
+    "matchingSearch": "Matching Search",
+    "emptyState": {
+      "title": "No Favorites Yet",
+      "description": "Start exploring and add them to your favorites by clicking the heart icon.",
+      "exploreButton": "Explore"
+    },
+    "noResults": {
+      "title": "No Results Found",
+      "description": "No favorites match your search for \"{search}\"",
+      "clearSearch": "Clear Search"
+    }
+  },
+
+  "AuthPage": {
+    "welcomeBack": "Welcome Back!",
+    "login": {
+      "title": "Login",
+      "subtitle": "Welcome back! Please sign in to your account.",
+      "signIn": "Sign In",
+      "signingIn": "Signing in..."
+    },
+    "signup": {
+      "title": "Sign Up",
+      "subtitle": "Create a new account to get started.",
+      "createAccount": "Create Account",
+      "creatingAccount": "Creating account..."
+    },
+    "form": {
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "createPassword": "Create a password",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Confirm your password",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name"
+    },
+    "switchMode": {
+      "noAccount": "Don't have an account? ",
+      "haveAccount": "Already have an account? ",
+      "signUp": "Sign up",
+      "signIn": "Sign in"
+    },
+    "errors": {
+      "loginFailed": "Login failed",
+      "registrationFailed": "Registration failed",
+      "passwordMismatch": "Passwords do not match",
+      "passwordLength": "Password must be at least 6 characters",
+      "generic": "Something went wrong"
+    }
+  },
+
+  "ProfilePage": {
+    "guides": "{{count}} guide",
+    "guides_plural": "{{count}} guides",
+    "editProfile": "Edit Profile",
+    "saving": "Saving...",
+    "noName": "No name provided",
+    "noEmail": "No email provided",
+    "error": "Error loading profile",
+    "bookmarkedGuides": "Bookmarked Guides",
+    "noBookmarkedGuides": "No bookmarked guides yet",
+    "bookmarkGuideHint": "Bookmark guides you find helpful to access them quickly here",
+    "exploreGuides": "Explore Guides",
+    "viewGuide": "View Guide",
+    "likedUniversities": "Favorites",
+    "noLikedUniversities": "No favorites yet",
+    "exploreUniversities": "Explore",
+    "editModal": {
+      "title": "Edit Profile",
+      "form": {
+        "name": "Full Name",
+        "namePlaceholder": "Enter your full name",
+        "email": "Email Address",
+        "emailPlaceholder": "Enter your email address"
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "save": "Save Changes"
+      },
+      "errors": {
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email address"
+      }
+    }
+  },
+
+  "UniversitiesPage": {
+    "title": "Universities",
+    "subtitle": "Explore and discover universities around the world",
+    "loading": "Loading universities...",
+    "error": "Error while loading",
+    "search": {
+      "placeholder": "Search...",
+      "button": "Search",
+      "resultsCount": "Results Found"
+    },
+    "noResults": {
+      "title": "Not found",
+      "description": "Try adjusting your search or filter criteria."
+    },
+    "emptyState": {
+      "title": "Nothing available",
+      "description": "There is currently nothing to display."
+    }
+  },
+
+  "UniversityCard": {
+    "visitWebsite": "Visit Website",
+    "addFavorite": "Add to favorites",
+    "removeFavorite": "Remove from favorites",
+    "loginRequired": "Login to add favorites",
+    "authPrompt": "You need to be logged in to add favorites. Would you like to register or login now?",
+    "modal": {
+      "authPrompt": "You need to be logged in to add favorites. Would you like to register or login now?",
+      "buttons": {
+        "addFavorite": "Add to Favorites",
+        "removeFavorite": "Remove from Favorites",
+        "loginRequired": "Login to add favorites",
+        "visitWebsite": "Visit Official Website"
+      },
+      "sections": {
+        "specializations": "Specializations",
+        "financing": "Financing Options",
+        "duration": "Program Duration",
+        "deadline": "Application Deadline",
+        "gender": "Gender Requirements",
+        "age": "Age Requirements",
+        "medical": "Medical Requirements",
+        "salary": "Salary Information",
+        "dormitory": "Dormitory Information",
+        "scholarships": "Scholarships & Rewards",
+        "otherInfo": "Other Information",
+        "additionalDetails": "Additional Details"
+      }
+    }
+  },
+
+  "Header": {
+    "logo": "Smart Device Instructor",
+    "nav": {
+      "home": "Home",
+      "search": "Search",
+      "likes": "Likes",
+      "profile": "Profile",
+      "login": "Login",
+      "logout": "Logout"
+    },
+    "aria": {
+      "menu": "Toggle Menu"
+    }
+  }
+}

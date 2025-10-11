@@ -1,0 +1,56 @@
+/* Swiper styles */
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/autoplay";
+
+/* Light theme variables */
+:root {
+  --main-color: #e11d48;       /* Rose / Primary accent */
+  --bg-color: #fafafa;         /* Soft gray background */
+  --text-color: #1e293b;       /* Slate for readability */
+  --nav-hover: #be123c;        /* Dark rose on hover */
+  --border-color: #d4d4d8;     /* Muted gray borders */
+}
+
+/* Dark mode overrides */
+:root.dark {
+  --main-color: #facc15;       /* Amber accent */
+  --bg-color: #0f172a;         /* Deep navy background */
+  --text-color: #f1f5f9;       /* Off-white text */
+  --nav-hover: #fde047;        /* Bright yellow hover */
+  --border-color: #334155;     /* Dark slate borders */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.categories-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* For larger screens, you might want a fixed 3x2 grid */
+@media (min-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

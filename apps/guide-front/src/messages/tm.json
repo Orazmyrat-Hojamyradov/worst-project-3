@@ -1,0 +1,444 @@
+{
+  "Categories": {
+    "beginner": "Başlangyç",
+    "intermediate": "Orta",
+    "advanced": "Ösen",
+    "expert": "Hünärment",
+    "pcBuilding": "Komplýuter Ýygnaýyşy",
+    "pcBuildingDescription": "Oýun komplýuterlerini, iş stansiýalaryny we büdjet ýygnaýyşlaryny gurmak üçin doly gollanmalar, jikme-jik komponent saýlamasy we ýygnaýyş düzgünleri bilen.",
+    "troubleshooting": "Kynçylyklary Çözmek",
+    "troubleshootingDescription": "Adaty komplýuter kynçylyklaryny we enjam problemlerini kesgitlemek we düzetmek üçin ädim-boýunça gollanmalar.",
+    "networking": "Ulgam Guruwy",
+    "networkingDescription": "Iň ýokary öndürijilik üçin öý ulgamlaryny, routerlary we simsiz ulgamlary gurmak we optimalaşdyrmak.",
+    "softwareInstallation": "Programma Guruwy",
+    "softwareInstallationDescription": "Ammar ulgamlary we esasy programma goşundylaryny nädip dogry gurmak we sazlamak öwreniň.",
+    "hardwareUpgrades": "Enjam Ýokarlandyryşy",
+    "hardwareUpgradesDescription": "Operatiw yadro, ammary, wideo kartlary we beýleki komplýuter komponentlerini ýokarlandyrmak üçin gollanmalar.",
+    "customModding": "Ösümlik Modifikasiýa",
+    "customModdingDescription": "Korpus modifikasiýasy, ösümlik sowadysy aýlawlary we estetik üýtgeşmeler üçin ösen usullary."
+  },
+  "CategoryCard": {
+    "guidesCount": "{count, plural, one {# Gollanma} other {# Gollanma}}",
+    "beginner": "Başlangyç",
+    "intermediate": "Orta",
+    "advanced": "Ösen",
+    "expert": "Hünärment",
+    "easy": "Aňsat",
+    "medium": "Orta",
+    "hard": "Kyn"
+  },
+  "HomePage": {
+    "assemblyCategories": "Ýygnaýyş Kategoriýalary",
+    "categoriesDescription": "Öz islegleriňize laýyk gelýän ideal görnüşi tapmak üçin dürli ýygnaýyş kategoriýalaryny gözden geçiriň.",
+    "featuredGuides": "Meşhur Ýygnaýyş Gollanmalary",
+    "featuredDescription": "Başlangyç we tejribeli ýygnaýjylar üçin ideal bolan iň meşhur ýygnaýyş gollanmalarymyz.",
+    "showingGuides": "{count} gollanma görkezilýär",
+    "noGuidesFound": "Süzgüçleriňize gabat gelýän gollanma tapylmady",
+    "loading": "Gollanmalar ýüklenýär...",
+    "error": "Gollanmalary ýüklemekde säwlik",
+    "allCategories": "Ähli Kategoriýalar",
+    "allLevels": "Ähli Derejeler",
+    "anyDuration": "Islendik Dowamlylyk",
+    "anyRating": "Islendik Reýting",
+    "under30min": "30 minutdan az",
+    "30to60min": "30-60 minut",
+    "1to2hours": "1-2 sagat",
+    "2to4hours": "2-4 sagat",
+    "4plusHours": "4+ sagat",
+    "45plusStars": "4.5+ Ýyldyz",
+    "40plusStars": "4.0+ Ýyldyz",
+    "35plusStars": "3.5+ Ýyldyz",
+    "30plusStars": "3.0+ Ýyldyz"
+  },
+  "GuideSteps": {
+    "loading": "Gollanma ýüklenýär...",
+    "error": "Gollanma ýüklemekde säwlik",
+    "notFound": "Gollanma tapylmady",
+    "backToGuides": "Gollanmalara gaýt",
+    "updated": "Täzelendi",
+    "reviews": "({count} syn)",
+    "assemblySteps": "Ýygnaýyş Ädimleri",
+    "step": "Ädim",
+    "min": "min",
+    "proTips": "Maslahatlar",
+    "proTip": "Hünärment Maslahat",
+    "warningTip": "Duýduryş",
+    "infoTip": "Maglumat",
+    "additionalDetails": "Goşmaça tehniki jikme-jik maglumatlar we kynçylyklary çözmek maglumatlary şu ýerde görkeziler. Bu bölüm jikme-jik düşündirişleri, alternatiw ýollary ýa-da bu ädimde ýüze çykyp bilinjek adaty kynçylyklary öz içine alyp biler.",
+    "hideDetails": "Jikme-jiklikleri gizle",
+    "showDetails": "Jikme-jiklikleri görkez",
+    "duration": "Dowamlylyk",
+    "steps": "Ädimler",
+    "stepsCompleted": "{completed}/{total} tamamlandy",
+    "progress": "Ösüş",
+    "timeRemaining": "Galýan wagt",
+    "addBookmark": "Bellik goş",
+    "removeBookmark": "Belligi aýyr",
+    "easy": "Aňsat",
+    "medium": "Orta",
+    "hard": "Kyn",
+    "beginner": "Başlangyç",
+    "intermediate": "Orta",
+    "advanced": "Ösen",
+    "expert": "Hünärment",
+    "pcBuilding": "Komplýuter Ýygnaýyşy",
+    "monitorSetup": "Monitor Guruwy",
+    "keyboardAssembly": "Klawiatura Ýygnaýyşy",
+    "audioSetup": "Audio Guruwy",
+    "networking": "Ulgam Guruwy",
+    "gamingSetup": "Oýun Guruwy",
+    "workstation": "Iş Stansiýasy"
+  },
+  "GuideCard": {
+    "stepsCount": "{count, plural, one {# Ädim} other {# Ädim}}",
+    "reviews": "({count})",
+    "updated": "Täzelendi {date}",
+    "startGuide": "Gollanma Başla",
+    "startGuideAriaLabel": "{title} gollanmasyny başla",
+    "beginner": "Başlangyç",
+    "intermediate": "Orta",
+    "advanced": "Ösen",
+    "expert": "Hünärment",
+    "pcBuilding": "Komplýuter Ýygnaýyşy",
+    "monitorSetup": "Monitor Guruwy",
+    "keyboardAssembly": "Klawiatura Ýygnaýyşy",
+    "audioSetup": "Audio Guruwy",
+    "networking": "Ulgam Guruwy",
+    "gamingSetup": "Oýun Guruwy",
+    "workstation": "Iş Stansiýasy"
+  },
+  "FilterSection": {
+    "filters": "Süzgüçler",
+    "clearAll": "Hemmesini arassala",
+    "category": "Kategoriýa",
+    "difficulty": "Kynlyk",
+    "duration": "Dowamlylyk",
+    "rating": "Reýting",
+    "allCategories": "Ähli Kategoriýalar",
+    "allLevels": "Ähli Derejeler",
+    "anyDuration": "Islendik Dowamlylyk",
+    "anyRating": "Islendik Reýting",
+    "pcBuilding": "Komplýuter Ýygnaýyşy",
+    "monitorSetup": "Monitor Guruwy",
+    "keyboardAssembly": "Klawiatura Ýygnaýyşy",
+    "audioSetup": "Audio Guruwy",
+    "networking": "Ulgam Guruwy",
+    "gamingSetup": "Oýun Guruwy",
+    "workstation": "Iş Stansiýasy",
+    "beginner": "Başlangyç",
+    "intermediate": "Orta",
+    "advanced": "Ösen",
+    "expert": "Hünärment",
+    "under30min": "30 minutdan az",
+    "30to60min": "30-60 minut",
+    "1to2hours": "1-2 sagat",
+    "2to4hours": "2-4 sagat",
+    "4plusHours": "4+ sagat",
+    "45plusStars": "4.5+ Ýyldyz",
+    "40plusStars": "4.0+ Ýyldyz",
+    "35plusStars": "3.5+ Ýyldyz",
+    "30plusStars": "3.0+ Ýyldyz"
+  },
+  "HeroSection": {
+    "subtitle": "Tehnika ýygnaýyş sungatyna eýe boluň",
+    "title": "Tehnika Ýygnaýyşy",
+    "description": "Komplýuterleri ýygnamak, monitorlary gurmak, mehaniki klawiaturalary ýygnamak we başgalary bizleriň jikme-jik ädim-boýunçalar we hünärment usullarymyz bilen öwreniň.",
+    "getStarted": "Başlamak",
+    "watchDemo": "Demony Gör",
+    "expertGuides": "Hünärment Gollanma",
+    "detailedSteps": "Jikme-Jik Ädim",
+    "happyBuilders": "Hoşnut Ýygnaýjylar"
+  },
+  "Footer": {
+    "brandName": "Smart Device Instructor",
+    "brandDescription": "Hünärment gollanmalar, ädim-boýunçalar we hünärment usullary bilen tehnika ýygnaýyşy öwrenmek üçin iň soňky çeşmeňiz.",
+    "stayUpdated": "Täzelenmeleri almak",
+    "emailPlaceholder": "E-poçtaňyzy giriziň",
+    "subscribe": "Abuna ýazylmak",
+    "newsletterText": "Iň soňky gollanmalary we täzelenmeleri e-poçtaňyza alyň.",
+    "subscriptionSuccess": "Abuna ýazylandygyňyz üçin sagboluň!",
+    "guides": "Gollanmalar",
+    "pcBuilding": "Komplýuter Ýygnaýyşy",
+    "monitorSetup": "Monitor Guruwy",
+    "keyboardAssembly": "Klawiatura Ýygnaýyşy",
+    "audioSetup": "Audio Guruwy",
+    "networking": "Ulgam Guruwy",
+    "resources": "Çeşmeler",
+    "componentDatabase": "Komponentler Bazasy",
+    "toolRecommendations": "Gurallar Maslahatlary",
+    "videoTutorials": "Wideo Sapaklar",
+    "communityForum": "Jemgyýet Forumy",
+    "troubleshooting": "Kynçylyklary Çözmek",
+    "company": "Kompaniýa",
+    "aboutUs": "Biz Barada",
+    "contact": "Aragatnaşyk",
+    "privacyPolicy": "Gizlinlik Sýýasaty",
+    "termsOfService": "Hyzmat Şertleri",
+    "careers": "Kariýera",
+    "copyright": "© 2025 Smart Device Instructor. Ähli hukuklary goralandyr."
+  },
+  "AdminUniversities": {
+    "title": "Admin – Dolandyrmak",
+    "accessDenied": "Giriş gadagan",
+    "noPermission": "Bu sahypa girmäge hukugyňyz ýok.",
+    
+    "form": {
+      "basicInfo": "Esasy maglumat",
+      "programDetails": "Programma jikme-jiklikleri",
+      "requirements": "Talablar",
+      "additionalInfo": "Goşmaça maglumat",
+      "websiteLinks": "Web sahypa çykgytlary",
+      
+      "fields": {
+        "name": "Uniwersitetiň ady",
+        "description": "Düşündiriş",
+        "photoUrl": "Surat URL-i",
+        "specials": "Hususy ukyplar",
+        "financing": "Maliýeleşdirme opsiýalary",
+        "duration": "Dowamlylygy",
+        "applicationDeadline": "Arza bermek möhleti",
+        "gender": "Jyns",
+        "age": "Iň az ýaş",
+        "others": "Beýleki talablar",
+        "others_p": "Beýleki programma talablary",
+        "medicine": "Saglyk goralgysy",
+        "salary": "Maşg berilýärmi",
+        "domitory": "Otag hakynda maglumat",
+        "rewards": "Baýrak/stipendiýalar",
+        "officialLink": "Resmi programma çykgydy"
+      },
+      
+      "placeholders": {
+        "optional": "opsional",
+        "required": "hökmany",
+        "selectGender": "Jynsy saýlaň",
+        "salaryOption": "Maşg berilýärmi?",
+        "durationExample": "meselem, 4 ýyl"
+      },
+      
+      "options": {
+        "gender": {
+          "everyone": "Hemmesi",
+          "male": "Erkek",
+          "female": "Aýal"
+        },
+        "salary": {
+          "yes": "Hawa",
+          "no": "Ýok"
+        }
+      }
+    },
+    
+    "buttons": {
+      "addUniversity": "Uniwersitet goş",
+      "updateUniversity": "Uniwersiteti täzele",
+      "cancel": "Ýatyryň",
+      "edit": "Redaktirle",
+      "delete": "Poz",
+      "visit": "Gör",
+      "saving": "Saklanýar..."
+    },
+    
+    "table": {
+      "title": "({count})",
+      "headers": {
+        "id": "ID",
+        "name": "Ady",
+        "description": "Düşündiriş",
+        "specials": "Hususy ukyplar",
+        "duration": "Dowamlylyk",
+        "deadline": "Möhlet",
+        "website": "Web sahypa",
+        "actions": "Hereketler"
+      },
+      "noData": "Hiczat tapylmady",
+      "savingChanges": "Üýtgeşmeler saklanýar..."
+    },
+    
+    "messages": {
+      "loading": "ýüklenýär...",
+      "confirmDelete": "Bu uniwersiteti pozmak isleýändigiňize ynanýarsyňyzmy?",
+      "error": "Ýalňyşlyk: {error}",
+      "errorCreating": "Uniwersitet döredilende ýalňyşlyk: {error}",
+      "errorUpdating": "Uniwersitet täzelenende ýalňyşlyk: {error}",
+      "errorDeleting": "Uniwersitet pozulanda ýalňyşlyk: {error}"
+    }
+  },
+
+  "FavoritesPage": {
+    "loading": "Söýgililer ýüklenýär...",
+    "error": "Uniwersitet maglumatlary ýüklenmekde näsazlyk ýüze çykdy",
+    "title": "Meniň Söýgililerim",
+    "subtitle": "Siziň halanyp saklanan",
+    "searchPlaceholder": "Söýgililerinizi gözläň...",
+    "totalFavorites": "Jemi Söýgililer",
+    "matchingSearch": "Gözlegime laýyk gelýär",
+    "emptyState": {
+      "title": "Heniz Söýgili Uniwersitet Ýok",
+      "description": "Gözläp başlaň we ýürek nyşanyna basyp olary söýgili goşuň.",
+      "exploreButton": "Gözle"
+    },
+    "noResults": {
+      "title": "Netije Tapylmady",
+      "description": "\"{search}\" gözlegiňize laýyk gelen söýgili uniwersitet ýok",
+      "clearSearch": "Gözlegi arassala"
+    }
+  },
+
+  "AuthPage": {
+    "welcomeBack": "Yzyna hoş geldiňiz!",
+    "login": {
+      "title": "Giriş",
+      "subtitle": "Yzyna hoş geldiňiz! Akkaundyňyza giriň.",
+      "signIn": "Giriş",
+      "signingIn": "Girilýär..."
+    },
+    "signup": {
+      "title": "Hasap Açmak",
+      "subtitle": "Başlamak üçin täze hasap açyň.",
+      "createAccount": "Hasap Aç",
+      "creatingAccount": "Hasap açylýar..."
+    },
+    "form": {
+      "email": "Email",
+      "emailPlaceholder": "Emailiňizi giriziň",
+      "password": "Açarsöz",
+      "passwordPlaceholder": "Açarsöziňizi giriziň",
+      "createPassword": "Açarsöz dörediň",
+      "confirmPassword": "Açarsözi Tassyklamak",
+      "confirmPasswordPlaceholder": "Açarsöziňizi tassyklayň",
+      "fullName": "Doly Ady",
+      "fullNamePlaceholder": "Doly adyňyzy giriziň"
+    },
+    "switchMode": {
+      "noAccount": "Hasabyňyz ýokmy? ",
+      "haveAccount": "Hasabyňyz barmy? ",
+      "signUp": "Hasap aç",
+      "signIn": "Giriş"
+    },
+    "errors": {
+      "loginFailed": "Giriş şowsuz",
+      "registrationFailed": "Hasap açmak şowsuz",
+      "passwordMismatch": "Açarsözler gabat gelmeýär",
+      "passwordLength": "Açarsöz azyndan 6 nyşandan ybarat bolmaly",
+      "generic": "Näsazlyk ýüze çykdy"
+    }
+  },
+
+  "ProfilePage": {
+    "guides": "{{count}} gollanma",
+    "guides_plural": "{{count}} gollanma",
+    "editProfile": "Profili redaktirlemek",
+    "saving": "Saklanýar...",
+    "noName": "At belgilenmedik",
+    "noEmail": "E-mail belgilenmedik",
+    "error": "Profili ýüklemekde näsazlyk",
+    "bookmarkedGuides": "Belgilenen gollanmalar",
+    "noBookmarkedGuides": "Heniz belgilenen gollanma ýok",
+    "bookmarkGuideHint": "Peýdaly gollanmalary belgileň, olara çalt ýetmek üçin",
+    "exploreGuides": "Gollanmalary gözlemek",
+    "viewGuide": "Gollanmany görmek",
+    "likedUniversities": "Halananlar",
+    "noLikedUniversities": "Heniz halanan ýok",
+    "exploreUniversities": "Uniwersitetleri gözlemek",
+    "editModal": {
+      "title": "Profili redaktirlemek",
+      "form": {
+        "name": "Doly ady",
+        "namePlaceholder": "Doly adyňyzy giriziň",
+        "email": "E-mail adresi",
+        "emailPlaceholder": "E-mail adresiňizi giriziň"
+      },
+      "buttons": {
+        "cancel": "Ýatyr",
+        "save": "Üýtgeşmeleri saklamak"
+      },
+      "errors": {
+        "nameRequired": "Ad hökmany",
+        "emailRequired": "E-mail hökmany",
+        "emailInvalid": "Dogry e-mail adresini giriziň"
+      }
+    }
+  },
+
+  "UniversitiesPage": {
+    "title": "Uniwersitetler",
+    "subtitle": "Dünýäniň ähli ýerlerindäki uniwersitetleri gözläň we açyň",
+    "loading": "Uniwersitetler ýüklenýär...",
+    "error": "Uniwersitetleri ýüklemekde näsazlyk",
+    "search": {
+      "placeholder": "Uniwersitetleri gözläň...",
+      "button": "Gözlemek",
+      "resultsCount": "Netije Tapyldy"
+    },
+    "noResults": {
+      "title": "Uniwersitetler tapylmady",
+      "description": "Gözleg ýa-da filter ülçemlerini üýtgediň."
+    },
+    "emptyState": {
+      "title": "Elýeterli uniwersitetler ýok",
+      "description": "Häzirki wagtda görkezmek üçin uniwersitetler ýok."
+    }
+  },
+
+  "UniversityCard": {
+    "visitWebsite": "Web sahypasyna gitmek",
+    "addFavorite": "Söýgililere goşmak",
+    "removeFavorite": "Söýgililerden aýyrmak",
+    "loginRequired": "Söýgililere goşmak üçin giriň",
+    "authPrompt": "Söýgililere goşmak üçin ulgama girmeli. Häzir hasap açmak ýa-da girmek isleýärsiňizmi?",
+    "modal": {
+      "authPrompt": "Söýgililere goşmak üçin ulgama girmeli. Häzir hasap açmak ýa-da girmek isleýärsiňizmi?",
+      "buttons": {
+        "addFavorite": "Söýgililere Goşmak",
+        "removeFavorite": "Söýgililerden Aýyrmak",
+        "loginRequired": "Söýgililere goşmak üçin giriň",
+        "visitWebsite": "Resmi Web Sahypasyna Gitmek"
+      },
+      "sections": {
+        "specializations": "Uzmanlyklar",
+        "financing": "Maliýeleşdirme Opsiýalary",
+        "duration": "Programma Dowamlylygy",
+        "deadline": "Arza Beriş Möhleti",
+        "gender": "Jynsy Talablar",
+        "age": "Ýaş Talablary",
+        "medical": "Medisina Talablary",
+        "salary": "Aýlyk Hakda Maglumat",
+        "dormitory": "Ýaşaýyş Jaýy Barada Maglumat",
+        "scholarships": "Stypendiýalar we Sylaglary",
+        "otherInfo": "Beýleki Maglumatlar",
+        "additionalDetails": "Goşmaça Jikme-Jiklikler"
+      }
+    }
+  },
+
+  "Header": {
+    "logo": "Smart Device Instructor",
+    "nav": {
+      "home": "Baş Sahypa",
+      "search": "Gözlemek",
+      "likes": "Halananlar",
+      "profile": "Profil",
+      "login": "Giriş",
+      "logout": "Çykmak"
+    },
+    "aria": {
+      "menu": "Menyuny Açmak/Yapmak"
+    }
+  },
+
+  "sHeader": {
+    "logo": "Smart Device Instructor",
+    "nav": {
+      "home": "Baş Sahypa",
+      "search": "Gözlemek",
+      "likes": "Halananlar",
+      "profile": "Profil",
+      "login": "Giriş",
+      "logout": "Çykmak"
+    },
+    "aria": {
+      "menu": "Menyuny Açmak/Yapmak"
+    }
+  }
+}

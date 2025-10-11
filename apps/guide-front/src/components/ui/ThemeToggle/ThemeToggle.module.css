@@ -1,0 +1,11 @@
+.button {
+  padding: 6px;
+  border-radius: 8px;
+  background-color: var(--main-color);
+  color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 32px;
+  height: 32px;
+}

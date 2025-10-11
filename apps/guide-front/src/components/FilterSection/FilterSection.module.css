@@ -1,0 +1,346 @@
+.filterSection {
+  padding: 60px 0;
+  background: var(--bg-color);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Filters Container */
+.filtersContainer {
+  background: var(--bg-color);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.filtersHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.filtersTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.clearButton {
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid #cbd5e0;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clearButton:hover {
+  background: var(--bg-color);
+  color: var(--text-color);
+  border-color: #a0aec0;
+}
+
+/* Filters Grid */
+.filtersGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filterLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+.filterButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filterButton {
+  padding: 8px 16px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filterButton:hover {
+  background: var(--bg-color);
+  border-color: #a0aec0;
+  transform: translateY(-1px);
+}
+
+.filterButton.active {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: var(--bg-color);
+  border-color: #4f46e5;
+  box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+}
+
+/* Active Filters */
+.activeFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--text-color);
+}
+
+.activeFilter {
+  display: flex;
+  align-items: center;
+  background: var(--bg-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  gap: 8px;
+  border: 1px solid var(--text-color);
+}
+
+.activeFilterText {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.removeFilter {
+  background: none;
+  border: none;
+  color: #718096;
+  cursor: pointer;
+  font-size: 1.125rem;
+  line-height: 1;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.removeFilter:hover {
+  background: #e53e3e;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filterSection {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .filtersContainer {
+    padding: 24px;
+  }
+
+  .filtersHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .filterButtons {
+    gap: 6px;
+  }
+
+  .filterButton {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+.categories-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* For larger screens, you might want a fixed 3x2 grid */
+@media (min-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .filtersContainer {
+    padding: 20px;
+  }
+
+  .filterButtons {
+    justify-content: center;
+  }
+
+  .filterButton {
+    flex: 1;
+    min-width: calc(50% - 6px);
+    text-align: center;
+  }
+}
+
+/* Custom Select */
+.customSelect {
+  position: relative;
+  width: 100%;
+}
+
+.selectTrigger {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.selectTrigger:hover {
+  border-color: #a0aec0;
+  background: var(--bg-color);
+}
+
+.selectTrigger.activeTrigger {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.arrow {
+  font-size: 0.8rem;
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.activeTrigger .arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.selectDropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--bg-color);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  z-index: 20;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  max-height: 240px;
+  overflow-y: auto;
+  animation: fadeIn 0.15s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Options */
+.selectOption {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  transition: all 0.2s ease;
+}
+
+.selectOption:hover {
+  background: var(--bg-color);
+}
+
+.selectOption.active {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: var(--bg-color);
+  font-weight: 600;
+}
