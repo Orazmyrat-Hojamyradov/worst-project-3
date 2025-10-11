@@ -13,10 +13,6 @@ async function bootstrap() {
     prefix: '/uploads/',
   });
 
-  app.enableCors({
-    origin: '*',
-  });
-
   const config = new DocumentBuilder()
     .setTitle('University API')
     .setDescription('API for managing universities')
@@ -32,6 +28,10 @@ async function bootstrap() {
     forbidNonWhitelisted: true,
     transform: true,  
   }));
+
+  app.enableCors({
+    origin: "*"
+   })
   app.use('/uploads', express.static(join(__dirname, '..', 'uploads')));
   const PORT = 3010;
   await app.listen(PORT);

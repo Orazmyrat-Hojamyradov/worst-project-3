@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, Body } from '@nestjs/common';
+import { Controller, Get, Param, Post, Body, Put, Delete } from '@nestjs/common';
 import { GuideService } from './guide.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
@@ -40,4 +40,19 @@ export class GuideController {
   addTip(@Param('stepId') stepId: string, @Body() body: any) {
     return this.guideService.addTip(stepId, body);
   }
+
+  @Put(':id')
+  @ApiOperation({ summary: 'Update an existing guide' })
+  @ApiResponse({ status: 200, description: 'Guide updated successfully.' })
+  update(@Param('id') id: string, @Body() body: any) {
+    return this.guideService.update(id, body);
+  }
+
+  @Delete(':id')
+  @ApiOperation({ summary: 'Delete a guide' })
+  @ApiResponse({ status: 200, description: 'Guide deleted successfully.' })
+  remove(@Param('id') id: string) {
+    return this.guideService.remove(id);
+  }
+
 }

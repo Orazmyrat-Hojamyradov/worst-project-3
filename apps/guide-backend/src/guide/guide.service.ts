@@ -40,4 +40,15 @@ export class GuideService {
     const tip = this.tipRepo.create({ ...tipData, step });
     return this.tipRepo.save(tip);
   }
+
+  async update(id: string, data: Partial<Guide>) {
+    const guide = await this.findOne(id);
+    Object.assign(guide, data);
+    return this.guideRepo.save(guide);
+  }
+
+  async remove(id: string) {
+    const guide = await this.findOne(id);
+    return this.guideRepo.remove(guide);
+  }
 }
