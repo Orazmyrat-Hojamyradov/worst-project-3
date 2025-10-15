@@ -46,7 +46,7 @@ export function useUpdateUniversity() {
   return useMutation({
     mutationFn: async ({ id, ...data }: { id: string; [key: string]: any }) => {
       const res = await fetch(`${API_URL}/api/guides/${id}`, {
-        method: "POST",
+        method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });

@@ -22,15 +22,8 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className={styles.mainContent}>
           {/* Brand Section */}
-          <div className={styles.brandSection}>
-            <h2 className={styles.brandName}>{t('brandName')}</h2>
-            <p className={styles.brandDescription}>
-              {t('brandDescription')}
-            </p>
-          </div>
-
           {/* Newsletter Section */}
-          <div className={styles.newsletterSection}>
+          {/* <div className={styles.newsletterSection}>
             <h3 className={styles.sectionTitle}>{t('stayUpdated')}</h3>
             <form onSubmit={handleSubmit} className={styles.newsletterForm}>
               <div className={styles.inputGroup}>
@@ -50,7 +43,7 @@ const Footer = () => {
             <p className={styles.newsletterText}>
               {t('newsletterText')}
             </p>
-          </div>
+          </div> */}
         </div>
 
         {/* Links Sections */}
@@ -79,8 +72,14 @@ const Footer = () => {
             </ul>
           </div>
 
+            <div className={styles.brandSection}>
+            <h2 className={styles.brandName}>{t('brandName')}</h2>
+            <p className={styles.brandDescription}>
+              {t('brandDescription')}
+            </p>
+          </div>
           {/* Company Section */}
-          <div className={styles.linksSection}>
+          {/* <div className={styles.linksSection}>
             <h3 className={styles.sectionTitle}>{t('company')}</h3>
             <ul className={styles.linksList}>
               <li><a href="#" className={styles.link}>{t('aboutUs')}</a></li>
@@ -89,7 +88,7 @@ const Footer = () => {
               <li><a href="#" className={styles.link}>{t('termsOfService')}</a></li>
               <li><a href="#" className={styles.link}>{t('careers')}</a></li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         {/* Copyright Section */}
