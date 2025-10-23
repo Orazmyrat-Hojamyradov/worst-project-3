@@ -24,6 +24,9 @@ export class Guide {
   @Column({ nullable: true, default: 0 })
   rating?: number;
 
+  @Column({ nullable: true })
+  mediaUrl?: string;
+
   @OneToMany(() => Step, step => step.guide, { cascade: true, eager: true })
   steps: Step[];
 

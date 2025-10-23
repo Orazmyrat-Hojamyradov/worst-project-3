@@ -1,99 +1,57 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Cookies from 'js-cookie';
 import { useTranslations } from 'next-intl';
+import { Home, User, LogIn, Laptop, Phone, Mail } from 'lucide-react';
 import styles from './Footer.module.css';
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
-  const t = useTranslations('Footer');
+  const t = useTranslations();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle subscription logic here
-    console.log('Subscribed with email:', email);
-    setEmail('');
-    alert(t('subscriptionSuccess'));
+  useEffect(() => {
+    setIsLoggedIn(!!Cookies.get('auth_token'));
+  }, []);
+
+  const handleLogout = () => {
+    Cookies.remove('auth_token');
+    Cookies.remove('user_data');
+    window.location.href = '/login';
   };
 
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        {/* Main Footer Content */}
-        <div className={styles.mainContent}>
-          {/* Brand Section */}
-          {/* Newsletter Section */}
-          {/* <div className={styles.newsletterSection}>
-            <h3 className={styles.sectionTitle}>{t('stayUpdated')}</h3>
-            <form onSubmit={handleSubmit} className={styles.newsletterForm}>
-              <div className={styles.inputGroup}>
-                <input
-                  type="email"
-                  placeholder={t('emailPlaceholder')}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className={styles.emailInput}
-                  required
-                />
-                <button type="submit" className={styles.subscribeButton}>
-                  {t('subscribe')}
-                </button>
-              </div>
-            </form>
-            <p className={styles.newsletterText}>
-              {t('newsletterText')}
-            </p>
-          </div> */}
+        {/* Brand Section */}
+        <div className={styles.brandSection}>
+          <Laptop size={26} />
+          <span className={styles.brandName}>{t('Footer.brandName')}</span>
         </div>
 
-        {/* Links Sections */}
-        <div className={styles.linksSections}>
-          {/* Guides Section */}
-          <div className={styles.linksSection}>
-            <h3 className={styles.sectionTitle}>{t('guides')}</h3>
-            <ul className={styles.linksList}>
-              <li><a href="#" className={styles.link}>{t('pcBuilding')}</a></li>
-              <li><a href="#" className={styles.link}>{t('monitorSetup')}</a></li>
-              <li><a href="#" className={styles.link}>{t('keyboardAssembly')}</a></li>
-              <li><a href="#" className={styles.link}>{t('audioSetup')}</a></li>
-              <li><a href="#" className={styles.link}>{t('networking')}</a></li>
-            </ul>
+        {/* Contact Section */}
+        <div className={styles.contactSection}>
+          <div className={styles.contactItem}>
+            <Phone size={18} />
+            <a href="tel:+99361123456" className={styles.contactLink}>
+              +993 61 12 34 56
+            </a>
           </div>
-
-          {/* Resources Section */}
-          <div className={styles.linksSection}>
-            <h3 className={styles.sectionTitle}>{t('resources')}</h3>
-            <ul className={styles.linksList}>
-              <li><a href="#" className={styles.link}>{t('componentDatabase')}</a></li>
-              <li><a href="#" className={styles.link}>{t('toolRecommendations')}</a></li>
-              <li><a href="#" className={styles.link}>{t('videoTutorials')}</a></li>
-              <li><a href="#" className={styles.link}>{t('communityForum')}</a></li>
-              <li><a href="#" className={styles.link}>{t('troubleshooting')}</a></li>
-            </ul>
+          <div className={styles.contactItem}>
+            <Mail size={18} />
+            <a href="mailto:info@example.com" className={styles.contactLink}>
+              info@example.com
+            </a>
           </div>
-
-            <div className={styles.brandSection}>
-            <h2 className={styles.brandName}>{t('brandName')}</h2>
-            <p className={styles.brandDescription}>
-              {t('brandDescription')}
-            </p>
-          </div>
-          {/* Company Section */}
-          {/* <div className={styles.linksSection}>
-            <h3 className={styles.sectionTitle}>{t('company')}</h3>
-            <ul className={styles.linksList}>
-              <li><a href="#" className={styles.link}>{t('aboutUs')}</a></li>
-              <li><a href="#" className={styles.link}>{t('contact')}</a></li>
-              <li><a href="#" className={styles.link}>{t('privacyPolicy')}</a></li>
-              <li><a href="#" className={styles.link}>{t('termsOfService')}</a></li>
-              <li><a href="#" className={styles.link}>{t('careers')}</a></li>
-            </ul>
-          </div> */}
         </div>
 
-        {/* Copyright Section */}
+        {/* Copyright */}
         <div className={styles.copyright}>
-          <p>{t('copyright')}</p>
+          <p>
+            © {new Date().getFullYear()} {t('Footer.brandName')}.{' '}
+            {t('Footer.copyright')}
+          </p>
         </div>
       </div>
     </footer>
