@@ -32,6 +32,7 @@ interface University {
   difficulty: "Beginner" | "Intermediate" | "Advanced";
   duration: string;
   rating: number;
+  mediaUrl: string | null; // Added guide-level media
   steps: Step[];
   language: "en" | "ru" | "tm";
   createdAt: string;
@@ -45,6 +46,7 @@ interface CreateUniversityPayload {
   difficulty: "Beginner" | "Intermediate" | "Advanced";
   duration: string;
   rating: number;
+  mediaUrl: string | null; // Added guide-level media
   steps: Omit<Step, "id">[];
   language: "en" | "ru" | "tm";
 }
@@ -69,6 +71,7 @@ const initialFormData: CreateUniversityPayload = {
   difficulty: "Intermediate",
   duration: "",
   rating: 5,
+  mediaUrl: null, // Added guide-level media
   steps: [initialStep],
   language: "en",
 };
@@ -78,6 +81,7 @@ export default function AdminUniversitiesPage() {
   const [editingUni, setEditingUni] = useState<University | null>(null);
   const [currentLanguage, setCurrentLanguage] = useState<"en" | "ru" | "tm">("en");
   const [uploadingStepIndex, setUploadingStepIndex] = useState<number | null>(null);
+  const [uploadingGuideMedia, setUploadingGuideMedia] = useState(false); // New state for guide media upload
 
   const { data: universities, isLoading } = useFetchUniversities();
   const createMutation = useCreateUniversity();
@@ -90,16 +94,15 @@ export default function AdminUniversitiesPage() {
 
   console.log(universities);
 
-  // File upload handler
-  const handleFileUpload = async (stepIndex: number, file: File) => {
+  // File upload handler for guide-level media
+  const handleGuideFileUpload = async (file: File) => {
     if (!file) {
       console.log('No file selected');
       return;
     }
 
-    console.log('Uploading file:', file.name, file.type, file.size);
+    console.log('Uploading guide media:', file.name, file.type, file.size);
 
-    // Validate file type
     const allowedTypes = [
       'image/jpeg',
       'image/jpg',
@@ -117,7 +120,76 @@ export default function AdminUniversitiesPage() {
       return;
     }
 
-    // Validate file size (50MB max)
+    const maxSize = 50 * 1024 * 1024;
+    if (file.size > maxSize) {
+      alert('File size exceeds 50MB limit');
+      return;
+    }
+
+    setUploadingGuideMedia(true);
+
+    try {
+      const uploadFormData = new FormData();
+      uploadFormData.append('file', file);
+
+      console.log('Sending upload request...');
+
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: uploadFormData,
+      });
+
+      console.log('Response status:', response.status);
+
+      if (!response.ok) {
+        const error = await response.json();
+        console.error('Upload error response:', error);
+        throw new Error(error.error || 'Upload failed');
+      }
+
+      const data = await response.json();
+      console.log('Upload success:', data);
+      
+      setFormData(prev => ({
+        ...prev,
+        mediaUrl: data.url,
+      }));
+
+      alert('Guide media uploaded successfully!');
+    } catch (error) {
+      console.error('Upload error:', error);
+      alert(`Failed to upload file: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setUploadingGuideMedia(false);
+    }
+  };
+
+  // File upload handler for step media
+  const handleFileUpload = async (stepIndex: number, file: File) => {
+    if (!file) {
+      console.log('No file selected');
+      return;
+    }
+
+    console.log('Uploading file:', file.name, file.type, file.size);
+
+    const allowedTypes = [
+      'image/jpeg',
+      'image/jpg',
+      'image/png',
+      'image/gif',
+      'image/webp',
+      'video/mp4',
+      'video/webm',
+      'video/ogg',
+      'video/quicktime',
+    ];
+
+    if (!allowedTypes.includes(file.type)) {
+      alert('Invalid file type. Only images and videos are allowed.');
+      return;
+    }
+
     const maxSize = 50 * 1024 * 1024;
     if (file.size > maxSize) {
       alert('File size exceeds 50MB limit');
@@ -148,10 +220,8 @@ export default function AdminUniversitiesPage() {
       const data = await response.json();
       console.log('Upload success:', data);
       
-      // Update step with the uploaded file URL using the fixed function
       const mediaType = file.type.startsWith('image/') ? 'image' : 'video';
       
-      // Use the batch update function to update both fields at once
       handleMediaUpdate(stepIndex, data.url, mediaType);
 
       alert('File uploaded successfully! The URL will be saved when you submit the form.');
@@ -163,7 +233,6 @@ export default function AdminUniversitiesPage() {
     }
   };
 
-  // Fixed function to update media URL and type together
   const handleMediaUpdate = (stepIndex: number, mediaUrl: string | null, mediaType: string | null) => {
     const updatedSteps = [...formData.steps];
     updatedSteps[stepIndex] = {
@@ -178,7 +247,6 @@ export default function AdminUniversitiesPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Debug current form data
     console.log('Current form data before submit:', formData);
     console.log('Steps with media:', formData.steps.map((step, index) => ({
       index,
@@ -190,12 +258,13 @@ export default function AdminUniversitiesPage() {
     const payload = {
       ...formData,
       language: currentLanguage,
+      mediaUrl: formData.mediaUrl, // Include guide-level mediaUrl
       steps: formData.steps.map(step => ({
         title: step.title,
         body: step.body,
         order: step.order,
-        mediaUrl: step.mediaUrl, // Directly use the value, don't override with null
-        mediaType: step.mediaType, // Directly use the value
+        mediaUrl: step.mediaUrl,
+        mediaType: step.mediaType,
         estimateMinutes: step.estimateMinutes,
         tips: step.tips.map(tip => ({
           type: tip.type,
@@ -205,11 +274,7 @@ export default function AdminUniversitiesPage() {
     };
 
     console.log('Submitting payload:', JSON.stringify(payload, null, 2));
-    console.log('Steps with media in payload:', payload.steps.filter(s => s.mediaUrl).map(s => ({ 
-      order: s.order, 
-      mediaUrl: s.mediaUrl,
-      mediaType: s.mediaType 
-    })));
+    console.log('Guide mediaUrl:', payload.mediaUrl);
 
     try {
       if (editingUni) {
@@ -320,6 +385,13 @@ export default function AdminUniversitiesPage() {
     handleMediaUpdate(stepIndex, null, null);
   };
 
+  const removeGuideMedia = () => {
+    setFormData(prev => ({
+      ...prev,
+      mediaUrl: null,
+    }));
+  };
+
   const startEditing = (uni: University) => {
     setEditingUni(uni);
     setCurrentLanguage(uni.language);
@@ -330,6 +402,7 @@ export default function AdminUniversitiesPage() {
       difficulty: uni.difficulty,
       duration: uni.duration,
       rating: uni.rating,
+      mediaUrl: uni.mediaUrl, // Load guide-level mediaUrl
       steps: uni.steps.map(step => ({
         title: step.title,
         body: step.body,
@@ -412,21 +485,20 @@ export default function AdminUniversitiesPage() {
           className={styles.input}
         />
 
-          <CustomSelect
-            value={formData.difficulty}
-            onChange={(val) =>
-              setFormData({
-                ...formData,
-                difficulty: val as CreateUniversityPayload["difficulty"],
-              })
-            }
-            options={[
-              { value: "Beginner", label: "Beginner" },
-              { value: "Intermediate", label: "Intermediate" },
-              { value: "Advanced", label: "Advanced" },
-            ]}
-          />
-
+        <CustomSelect
+          value={formData.difficulty}
+          onChange={(val) =>
+            setFormData({
+              ...formData,
+              difficulty: val as CreateUniversityPayload["difficulty"],
+            })
+          }
+          options={[
+            { value: "Beginner", label: "Beginner" },
+            { value: "Intermediate", label: "Intermediate" },
+            { value: "Advanced", label: "Advanced" },
+          ]}
+        />
 
         <input
           type="text"
@@ -437,6 +509,60 @@ export default function AdminUniversitiesPage() {
           }
           className={styles.input}
         />
+
+        {/* Guide-level Media Upload Section */}
+        <div className={styles.guideMediaSection}>
+          <h3>Guide Cover Image/Video</h3>
+          <div className={styles.stepField}>
+            <label>Upload Guide Media</label>
+            <input
+              type="file"
+              accept="image/*,video/*"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) {
+                  console.log('Guide file selected:', file.name);
+                  handleGuideFileUpload(file);
+                }
+                e.target.value = '';
+              }}
+              className={styles.input}
+              disabled={uploadingGuideMedia}
+            />
+            {uploadingGuideMedia && (
+              <span className={styles.uploadingText}>Uploading... Please wait</span>
+            )}
+          </div>
+
+          {formData.mediaUrl && (
+            <div className={styles.mediaPreview}>
+              <div className={styles.mediaInfo}>
+                <span>✅ Guide media uploaded successfully</span>
+                <span className={styles.mediaPath}>Path: {formData.mediaUrl}</span>
+                <a 
+                  href={formData.mediaUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.mediaLink}
+                >
+                  Preview
+                </a>
+                <button
+                  type="button"
+                  onClick={removeGuideMedia}
+                  className={styles.removeMediaButton}
+                >
+                  Remove
+                </button>
+              </div>
+              <img 
+                src={formData.mediaUrl} 
+                alt="Guide Preview" 
+                className={styles.mediaPreviewImage}
+              />
+            </div>
+          )}
+        </div>
 
         <div className={styles.stepsContainer}>
           <div className={styles.stepsHeader}>
@@ -514,7 +640,6 @@ export default function AdminUniversitiesPage() {
                           console.log('File selected:', file.name);
                           handleFileUpload(stepIndex, file);
                         }
-                        // Reset the input to allow uploading the same file again
                         e.target.value = '';
                       }}
                       className={styles.input}
@@ -647,6 +772,7 @@ export default function AdminUniversitiesPage() {
                 <span> - {uni.category} ({uni.difficulty})</span>
                 <div className={styles.universityMeta}>
                   Duration: {uni.duration} | Rating: {uni.rating}/5 | Steps: {uni.steps.length}
+                  {uni.mediaUrl && <span> | 🖼️ Has cover media</span>}
                 </div>
               </div>
               <div className={styles.actions}>

@@ -54,7 +54,7 @@ const GuideCard: React.FC<GuideCardProps> = ({ guide }) => {
     duration,
     rating,
     steps,
-    image,
+    mediaUrl,
     updatedAt,
   } = guide;
 
@@ -62,7 +62,7 @@ const GuideCard: React.FC<GuideCardProps> = ({ guide }) => {
   const reviewCount = Math.floor(rating * 25); // Example: 5 rating = ~125 reviews
 
   // Generate placeholder image if none provided
-  const imageUrl = image || `https://placehold.co/600x400/1e293b/e2e8f0?text=${encodeURIComponent(title)}`;
+  const imageUrl = mediaUrl || `https://placehold.co/600x400/1e293b/e2e8f0?text=${encodeURIComponent(title)}`;
 
   // Format date
   const formattedDate = new Date(updatedAt).toLocaleDateString('en-US', { 
