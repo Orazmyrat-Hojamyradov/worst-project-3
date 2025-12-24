@@ -30,7 +30,10 @@ async function bootstrap() {
   }));
 
   app.enableCors({
-    origin: "*"
+    origin: "*",
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
    })
   app.use('/uploads', express.static(join(__dirname, '..', 'uploads')));
   const PORT = 3010;

@@ -1,15 +1,12 @@
 'use client'
 
-import CategoryCard from "@/components/CategoryCard/CategoryCard";
 import FilterSection from "@/components/FilterSection/FilterSection";
 import GuideCard from "@/components/GuideCard/GuideCard";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import { example } from "@/example";
 import { useLocale, useTranslations } from "next-intl";
 import { useFetchUniversities } from "./admin/hooks";
-import { useState, useMemo, useEffect } from "react";
-import { categories } from "@/categories";
-import Cookies from "js-cookie";
+import { useState, useMemo, useCallback } from "react";
 
 interface FilterState {
   category: string;
@@ -24,7 +21,6 @@ type Guide = typeof example
 function App() {
   const { data, isLoading, error } = useFetchUniversities();
   const t = useTranslations("HomePage");
-  const locale = useLocale();
   
   const [filters, setFilters] = useState<FilterState>({
     category: t('allCategories'),
@@ -83,10 +79,10 @@ function App() {
   };
 
   // Safe data access helper
-  const getSafeData = () => {
+  const getSafeData = useCallback(() => {
     if (!data || !Array.isArray(data)) return [];
     return data;
-  };
+  },[data])
 
   // Filter the data based on current filters and language
   const filteredData = useMemo(() => {
@@ -166,7 +162,7 @@ function App() {
 
       return true;
     });
-  }, [data, filters, t, currentLanguage]);
+  }, [filters, t, currentLanguage, getSafeData]);
 
   const handleFilterChange = (newFilters: FilterState) => {
     setFilters(newFilters);

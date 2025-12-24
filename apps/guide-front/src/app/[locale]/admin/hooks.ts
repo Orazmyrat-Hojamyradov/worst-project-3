@@ -1,21 +1,19 @@
+// hooks/useUniversities.ts (Client-side TanStack Query hooks)
 "use client";
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3010"; // adjust to your backend
+import {
+  fetchUniversities,
+  createUniversity,
+  updateUniversity,
+  deleteUniversity,
+} from "@/api/api2";
 
 // ----------------- FETCH ALL -----------------
 export function useFetchUniversities() {
   return useQuery({
     queryKey: ["universities"],
-    queryFn: async () => {
-      const res = await fetch(`${API_URL}/api/guides`, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      });
-      if (!res.ok) throw new Error("Failed to fetch universities");
-      return res.json();
-    },
+    queryFn: fetchUniversities,
   });
 }
 
@@ -24,15 +22,7 @@ export function useCreateUniversity() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (data: any) => {
-      const res = await fetch(`${API_URL}/api/guides`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) throw new Error("Failed to create university");
-      return res.json();
-    },
+    mutationFn: createUniversity,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["universities"] });
     },
@@ -44,15 +34,8 @@ export function useUpdateUniversity() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async ({ id, ...data }: { id: string; [key: string]: any }) => {
-      const res = await fetch(`${API_URL}/api/guides/${id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!res) throw new Error("Failed to update university");
-      return res.json();
-    },
+    mutationFn: ({ id, ...data }: { id: string; [key: string]: any }) =>
+      updateUniversity(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["universities"] });
     },
@@ -64,13 +47,7 @@ export function useDeleteUniversity() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (id: string) => {
-      const res = await fetch(`${API_URL}/api/guides/${id}`, {
-        method: "DELETE",
-      });
-      if (!res.ok) throw new Error("Failed to delete university");
-      return res.json();
-    },
+    mutationFn: deleteUniversity,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["universities"] });
     },
