@@ -52,6 +52,8 @@ export default function LanguageSwitcher() {
   // Find current language option for display
   const currentLanguage = LANGUAGE_OPTIONS.find(option => option.code === lang);
 
+  if (pathname.includes('admin')) return null
+
   return (
     <div className={styles.container}>
       <button 

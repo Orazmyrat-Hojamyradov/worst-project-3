@@ -31,35 +31,43 @@ const PCAssemblySteps = () => {
     }
   }, []);
 
-  // Load bookmarks and completed steps from state for current user
+  // Load bookmarks and completed steps from localStorage for current user
   useEffect(() => {
     if (!isAuth) alert("Log in!")
 
-    // Load bookmarks for this user (using state instead of localStorage)
-    const savedBookmarks = window.bookmarksData?.[currentUserId] || [];
-    setBookmarked(savedBookmarks.includes(id));
+    // Load bookmarks from localStorage
+    if (currentUserId) {
+      const localStorageKey = `bookmarkedGuides_${currentUserId}`;
+      const savedBookmarks = JSON.parse(localStorage.getItem(localStorageKey) || '[]');
+      setBookmarked(savedBookmarks.includes(id));
+    }
 
-    // Load completed steps for this guide and user (using state)
-    const savedCompletedSteps = window.completedStepsData?.[`${currentUserId}_${id}`] || [];
-    setCompletedSteps(savedCompletedSteps);
+    // Load completed steps from localStorage
+    if (currentUserId) {
+      const completedStepsKey = `completedSteps_${currentUserId}_${id}`;
+      const savedCompletedSteps = JSON.parse(localStorage.getItem(completedStepsKey) || '[]');
+      setCompletedSteps(savedCompletedSteps);
+    }
   }, [id, currentUserId]);
 
-  // Save completed steps whenever they change
+  // Save completed steps to localStorage whenever they change
   useEffect(() => {
     if (!currentUserId) return;
-    if (!window.completedStepsData) window.completedStepsData = {};
-    window.completedStepsData[`${currentUserId}_${id}`] = completedSteps;
+    
+    const completedStepsKey = `completedSteps_${currentUserId}_${id}`;
+    localStorage.setItem(completedStepsKey, JSON.stringify(completedSteps));
   }, [completedSteps, id, currentUserId]);
 
-  // Toggle bookmark and save to state for current user
+  // Toggle bookmark and save to localStorage for current user
   const toggleBookmark = () => {
     if (!currentUserId) {
       console.log('User not logged in');
       alert("Log in!")
+      return;
     }
 
-    if (!window.bookmarksData) window.bookmarksData = {};
-    let bookmarks = window.bookmarksData[currentUserId] || [];
+    const localStorageKey = `bookmarkedGuides_${currentUserId}`;
+    let bookmarks = JSON.parse(localStorage.getItem(localStorageKey) || '[]');
     
     if (bookmarked) {
       // Remove bookmark
@@ -71,7 +79,7 @@ const PCAssemblySteps = () => {
       }
     }
     
-    window.bookmarksData[currentUserId] = bookmarks;
+    localStorage.setItem(localStorageKey, JSON.stringify(bookmarks));
     setBookmarked(!bookmarked);
   };
 
@@ -105,9 +113,6 @@ const PCAssemblySteps = () => {
       return res.json();
     },
   });
-
-  console.log(guideData);
-  
 
   // Loading state
   if (isLoading) {
@@ -237,7 +242,7 @@ const PCAssemblySteps = () => {
     });
   };
 
-  // Render media content (image or video) - FIXED VERSION
+  // Render media content (image or video)
   const renderMedia = (mediaUrl, mediaType) => {
     if (!mediaUrl || !mediaType) return null;
 
@@ -268,9 +273,6 @@ const PCAssemblySteps = () => {
       </div>
     );
   };
-
-  console.log(guideData);
-  
 
   return (
     <div className="container">
@@ -935,7 +937,6 @@ const PCAssemblySteps = () => {
                     
                     <p className="stepBody">{step.body}</p>
                     
-                    {/* Render media if exists - FIXED CONDITION */}
                     {step.mediaUrl && step.mediaType && renderMedia(step.mediaUrl, step.mediaType)}
                     
                     {step.tips && step.tips.length > 0 && (

@@ -38,11 +38,10 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
       t('workstation')
     ],
     difficulty: [
-      t('allLevels'),
-      t('beginner'),
-      t('intermediate'),
-      t('advanced'),
-      t('expert')
+      { value: t('allLevels'), label: t('allLevels') },
+      { value: 'Beginner', label: t('beginner') },
+      { value: 'Intermediate', label: t('intermediate') },
+      { value: 'Advanced', label: t('advanced') },
     ],
     duration: [
       t('anyDuration'),
@@ -92,6 +91,16 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
     }
   };
 
+  const getDisplayLabel = (key: string, value: string): string => {
+    if (key === 'difficulty') {
+      const difficultyOption = (filterOptions.difficulty as Array<{value: string, label: string}>).find(
+        opt => opt.value === value
+      );
+      return difficultyOption ? difficultyOption.label : value;
+    }
+    return value;
+  };
+
   return (
     <section className={styles.filterSection}>
       <div className={styles.container}>
@@ -120,27 +129,32 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
                       setOpenDropdown(openDropdown === key ? null : key)
                     }
                   >
-                    {filters[key as keyof FilterState]}
+                    {getDisplayLabel(key, filters[key as keyof FilterState])}
                     <span className={styles.arrow}>▼</span>
                   </button>
 
                   {openDropdown === key && (
                     <ul className={styles.selectDropdown}>
-                      {options.map(option => (
-                        <li
-                          key={option}
-                          className={`${styles.selectOption} ${
-                            filters[key as keyof FilterState] === option
-                              ? styles.active
-                              : ''
-                          }`}
-                          onClick={() =>
-                            handleFilterChange(key as keyof FilterState, option)
-                          }
-                        >
-                          {option}
-                        </li>
-                      ))}
+                      {options.map(option => {
+                        const optionValue = typeof option === 'object' ? option.value : option;
+                        const optionLabel = typeof option === 'object' ? option.label : option;
+                        
+                        return (
+                          <li
+                            key={optionValue}
+                            className={`${styles.selectOption} ${
+                              filters[key as keyof FilterState] === optionValue
+                                ? styles.active
+                                : ''
+                            }`}
+                            onClick={() =>
+                              handleFilterChange(key as keyof FilterState, optionValue)
+                            }
+                          >
+                            {optionLabel}
+                          </li>
+                        );
+                      })}
                     </ul>
                   )}
                 </div>
@@ -160,7 +174,9 @@ const FilterSection: React.FC<FilterSectionProps> = ({ onFilterChange }) => {
               
               return (
                 <div key={key} className={styles.activeFilter}>
-                  <span className={styles.activeFilterText}>{value}</span>
+                  <span className={styles.activeFilterText}>
+                    {getDisplayLabel(key, value)}
+                  </span>
                   <button
                     className={styles.removeFilter}
                     onClick={() =>

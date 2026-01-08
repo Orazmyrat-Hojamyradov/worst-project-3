@@ -749,8 +749,8 @@ export default function AdminUniversitiesPage() {
             disabled={createMutation.isPending || updateMutation.isPending}
           >
             {editingUni 
-              ? (updateMutation.isPending ? "Updating..." : "Update University") 
-              : (createMutation.isPending ? "Creating..." : "Create University")}
+              ? (updateMutation.isPending ? "Updating..." : "Update Guide") 
+              : (createMutation.isPending ? "Creating..." : "Create Guide")}
           </button>
           {editingUni && (
             <button type="button" onClick={resetForm} className={styles.cancelButton}>

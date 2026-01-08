@@ -84,85 +84,85 @@ function App() {
     return data;
   },[data])
 
-  // Filter the data based on current filters and language
   const filteredData = useMemo(() => {
-    const safeData = getSafeData();
-    if (!safeData.length) return [];
+  const safeData = getSafeData();
+  if (!safeData.length) return [];
 
-    return safeData.filter((guide: Guide) => {
-      if (!guide || typeof guide !== 'object') return false;
+  return safeData.filter((guide: Guide) => {
+    if (!guide || typeof guide !== 'object') return false;
 
-      // Language filter - filter by cookie locale
-      if (guide.language && guide.language !== currentLanguage) {
+    // Language filter - filter by cookie locale
+    if (guide.language && guide.language !== currentLanguage) {
+      return false;
+    }
+
+    // Category filter
+    if (filters.category !== t('allCategories')) {
+      const guideCategory = guide.category?.toLowerCase().trim();
+      const filterCategory = filters.category.toLowerCase().trim();
+      if (guideCategory !== filterCategory) {
         return false;
       }
+    }
 
-      // Category filter
-      if (filters.category !== t('allCategories')) {
-        const guideCategory = guide.category?.toLowerCase().trim();
-        const filterCategory = filters.category.toLowerCase().trim();
-        if (guideCategory !== filterCategory) {
-          return false;
-        }
+    // Difficulty filter
+    if (filters.difficulty !== t('allLevels')) {
+      const guideDifficulty = guide.difficulty?.toLowerCase().trim();
+      const filterDifficulty = filters.difficulty.toLowerCase().trim();
+      
+      if (guideDifficulty !== filterDifficulty) {
+        return false;
       }
+    }
 
-      // Difficulty filter
-      if (filters.difficulty !== t('allLevels')) {
-        const guideDifficulty = guide.difficulty?.toLowerCase().trim();
-        const filterDifficulty = filters.difficulty.toLowerCase().trim();
-        if (guideDifficulty !== filterDifficulty) {
-          return false;
-        }
+    // Duration filter
+    if (filters.duration !== t('anyDuration')) {
+      const guideDurationMinutes = parseDurationToMinutes(guide.duration || '');
+      
+      switch (filters.duration) {
+        case t('under30min'):
+          if (guideDurationMinutes > 30 || guideDurationMinutes === 0) return false;
+          break;
+        case t('30to60min'):
+          if (guideDurationMinutes < 30 || guideDurationMinutes > 60) return false;
+          break;
+        case t('1to2hours'):
+          if (guideDurationMinutes < 60 || guideDurationMinutes > 120) return false;
+          break;
+        case t('2to4hours'):
+          if (guideDurationMinutes < 120 || guideDurationMinutes > 240) return false;
+          break;
+        case t('4plusHours'):
+          if (guideDurationMinutes < 240) return false;
+          break;
       }
+    }
 
-      // Duration filter
-      if (filters.duration !== t('anyDuration')) {
-        const guideDurationMinutes = parseDurationToMinutes(guide.duration || '');
-        
-        switch (filters.duration) {
-          case t('under30min'):
-            if (guideDurationMinutes > 30 || guideDurationMinutes === 0) return false;
-            break;
-          case t('30to60min'):
-            if (guideDurationMinutes < 30 || guideDurationMinutes > 60) return false;
-            break;
-          case t('1to2hours'):
-            if (guideDurationMinutes < 60 || guideDurationMinutes > 120) return false;
-            break;
-          case t('2to4hours'):
-            if (guideDurationMinutes < 120 || guideDurationMinutes > 240) return false;
-            break;
-          case t('4plusHours'):
-            if (guideDurationMinutes < 240) return false;
-            break;
-        }
+    // Rating filter
+    if (filters.rating !== t('anyRating')) {
+      const guideRating = typeof guide.rating === 'number' 
+        ? guide.rating 
+        : Number(guide.rating) || 0;
+      
+      switch (filters.rating) {
+        case t('45plusStars'):
+          if (guideRating < 4.5) return false;
+          break;
+        case t('40plusStars'):
+          if (guideRating < 4.0) return false;
+          break;
+        case t('35plusStars'):
+          if (guideRating < 3.5) return false;
+          break;
+        case t('30plusStars'):
+          if (guideRating < 3.0) return false;
+          break;
       }
+    }
 
-      // Rating filter
-      if (filters.rating !== t('anyRating')) {
-        const guideRating = typeof guide.rating === 'number' 
-          ? guide.rating 
-          : Number(guide.rating) || 0;
-        
-        switch (filters.rating) {
-          case t('45plusStars'):
-            if (guideRating < 4.5) return false;
-            break;
-          case t('40plusStars'):
-            if (guideRating < 4.0) return false;
-            break;
-          case t('35plusStars'):
-            if (guideRating < 3.5) return false;
-            break;
-          case t('30plusStars'):
-            if (guideRating < 3.0) return false;
-            break;
-        }
-      }
-
-      return true;
-    });
-  }, [filters, t, currentLanguage, getSafeData]);
+    return true;
+  });
+}, [filters, t, currentLanguage, getSafeData, parseDurationToMinutes]);
 
   const handleFilterChange = (newFilters: FilterState) => {
     setFilters(newFilters);
